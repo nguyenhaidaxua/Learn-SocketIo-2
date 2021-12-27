@@ -37,18 +37,73 @@ a {
 	border: 0;
 	font-size: 17px;
 }
+/* ScrollBar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+ 
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 /* Chat Page */
 
 .chat-container {
-	max-width: 1100px;
+	max-width: 100%;
 	background: #fff;
 	margin: 30px auto;
 	overflow: hidden;
+    border-radius: 5px;
+    
+ 
+    
+}
+.bg-general{
+    background: url('https://wallpaperaccess.com/full/42271.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.bg-music{
+    background: url('https://2.bp.blogspot.com/-vM0jXCySZ1g/XOlXujbjcvI/AAAAAAAADIU/jj6yvAKidsMSQhyQDv710BD44CHjkK0zgCKgBGAs/w2880-h1800-c/hatsune-miku-anime-girl-uhdpaper.com-4K-190.jpg');
+    background-size: cover;
+    
+}
+.bg-genshin{
+    background: url('https://wallpapercave.com/wp/wp7486978.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.bg-cod{
+    background: url('https://tophinhanhdep.com/wp-content/uploads/2021/10/Cool-Call-of-Duty-Wallpapers.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.bg-csgo{
+    background: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d52aa865126337.5e96f6e7297f3.jpg');
+    background-size: cover;
+  
+}
+.bg-lol{
+    background: url('https://images6.alphacoders.com/118/thumb-1920-1188254.jpg');
+    background-size: cover;
+    
 }
 
+
 .chat-header {
-	background: var(--dark-color-a);
+	height: 85px;
 	color: #fff;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
@@ -56,7 +111,9 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+    
 }
+
 
 .chat-main {
 	display: grid;
@@ -64,7 +121,7 @@ a {
 }
 
 .chat-sidebar {
-	background: var(--dark-color-b);
+	
 	color: #fff;
 	padding: 20px 20px 60px;
 	overflow-y: scroll;
@@ -79,6 +136,8 @@ a {
 
 .chat-sidebar h3 {
 	margin-bottom: 15px;
+    padding: 5px;
+    border: 1px solid white;
 }
 
 .chat-sidebar ul li {
@@ -89,6 +148,7 @@ a {
 	padding: 30px;
 	max-height: 500px;
 	overflow-y: scroll;
+    
 }
 
 .chat-messages .message {
@@ -96,6 +156,10 @@ a {
 	margin-bottom: 15px;
 	background-color: var(--light-color);
 	border-radius: 5px;
+    word-wrap: break-word;
+    max-width: 40%;
+    width: fit-content;
+    text-align: left
 }
 
 .chat-messages .message .meta {
@@ -112,7 +176,7 @@ a {
 
 .chat-form-container {
 	padding: 20px 30px;
-	background-color: var(--dark-color-a);
+	
 }
 
 .chat-form-container form {
@@ -124,6 +188,7 @@ a {
 	padding: 5px;
 	height: 40px;
 	flex: 1;
+    
 }
 
 /* Join Page */
@@ -177,6 +242,7 @@ a {
 	margin-top: 20px;
 	width: 100%;
 }
+
 
 @media (max-width: 700px) {
 	.chat-main {

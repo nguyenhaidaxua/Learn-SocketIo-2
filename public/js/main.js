@@ -3,9 +3,36 @@ const chatMessages = document.querySelector('.chat-messages');
 const {username, room} = Qs.parse(location.search, {ignoreQueryPrefix: true});
 const getRoom= document.querySelector('#room-name')
 const usersList = document.querySelector('#users')
-
+const chatContainer = document.querySelector('.chat-container')
+const chatTitle = document.querySelector('.chat-title')
 const socket = io()
-
+// Change the bg
+socket.on('bg', bg => {
+    if (bg === 'Genshin'){
+        chatContainer.classList.add('bg-genshin')
+        chatTitle.innerText = 'Genshin Impact'
+    }
+    else if(bg === 'General') {
+        chatContainer.classList.add('bg-general')
+        chatTitle.innerText = 'General'
+    }
+    else if(bg === 'Music') {
+        chatContainer.classList.add('bg-music')
+        chatTitle.innerText= 'Music'
+    }
+    else if(bg === 'COD') {
+        chatContainer.classList.add('bg-cod')
+        chatTitle.innerText= 'Call of Duty'
+    }
+    else if(bg === 'CS') {
+        chatContainer.classList.add('bg-csgo')
+        chatTitle.innerText = 'Counter-Strike'
+    }
+    else if(bg === 'lol') {
+        chatContainer.classList.add('bg-lol')
+        chatTitle.innerText = 'League of Legends'
+    }
+})
 // Join 
 socket.emit('joinRoom', {username, room})
 
@@ -17,7 +44,7 @@ socket.on('roomUsers', ({room, users}) => {
 
 // message from server
 socket.on('message', message => {
-    console.log(message);
+    
     outputMessage(message);
 
     // Scroll
@@ -41,7 +68,7 @@ chatForm.addEventListener('submit', (e) => {
 function outputMessage (message){
     const div = document.createElement('div')
     div.classList.add('message')
-    div.innerHTML = `<p class="meta">${message.username}</p> <span>${message.time}</span></p>
+    div.innerHTML = `<p class="meta">${message.username}<span> ${message.time}</span></p> 
 						<p class="text">
 							${message.textMessage}
 						</p>`
